@@ -25,7 +25,7 @@
     self = [super init];
     
     _name       = dict[@"name"];
-    _address    = [self addressFromSegments:dict[@"location"][@"address"]];
+    _address    = [self addressFromSegments:dict[@"location"][@"display_address"]];
     _categories = [YelpCategory categoryListFromJson:dict[@"categories"]];
     _rating     = dict[@"rating"];
     _rating_image_url = dict[@"rating_img_url"];
@@ -39,6 +39,7 @@
 {
     NSMutableString* result = [NSMutableString new];
     for (NSString* segment in addr_arr) {
+        if (result.length > 0) [result appendString:@", "];
         [result appendString:segment];
     }
     return result;
