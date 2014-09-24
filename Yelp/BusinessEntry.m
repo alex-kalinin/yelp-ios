@@ -28,7 +28,7 @@
     _address    = [self addressFromSegments:dict[@"location"][@"address"]];
     _categories = [YelpCategory categoryListFromJson:dict[@"categories"]];
     _rating     = dict[@"rating"];
-    _rating_image_url = dict[@"rating_img_url_small"];
+    _rating_image_url = dict[@"rating_img_url"];
     _image_url  = dict[@"image_url"];
     _review_count = [dict[@"review_count"] intValue];
     
