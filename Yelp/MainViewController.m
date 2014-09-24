@@ -26,8 +26,11 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 
 @implementation MainViewController
 {
-    BusinessList* _business_list;
-    YelpEntryCell* _size_cell;
+    BusinessList*       _business_list;
+    YelpEntryCell*      _size_cell;
+    UIBarButtonItem*    _filter_button;
+    UISearchBar*        _search_bar;
+    NSString*           _last_search_string;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -54,7 +57,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 //    NSLog(@"%i", (int)size.height);
 //    return size.height + 1;
 //}
-
+//
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -81,11 +84,43 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     self.tableView.delegate = self;
     self.tableView.rowHeight = 84;
     
+    _last_search_string = @"Chipotle";
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"YelpEntryCell" bundle:nil] forCellReuseIdentifier:@"YelpEntryCell"];
     
-    _size_cell = [self.tableView dequeueReusableCellWithIdentifier:@"YelpEntryCell"];
+    _size_cell = [YelpEntryCell new];
+    //[self.tableView dequeueReusableCellWithIdentifier:@"YelpEntryCell"];
+    
+    _filter_button = [[UIBarButtonItem alloc] initWithTitle:@"Filter"
+                                                     style:UIBarButtonItemStylePlain
+                                                    target:self
+                                                    action:@selector(filter_click)];
+    
+    _search_bar = [[UISearchBar alloc]init];
+    _search_bar.delegate = self;
+    _search_bar.text = _last_search_string;
+    _search_bar.tintColor = [UIColor blackColor];
+    
+    self.navigationItem.titleView = _search_bar;
+    self.navigationItem.leftBarButtonItem = _filter_button;
     
     [self loadData];
+}
+
+-(void) filter_click
+{
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    _last_search_string = _search_bar.text;
+    [_search_bar resignFirstResponder];
+    [self loadData];
+}
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,7 +136,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 
 -(void) loadData
 {
-    [self.client searchWithTerm:@"Chipotle" success:^(AFHTTPRequestOperation *operation, id response)
+    [self.client searchWithTerm:_last_search_string success:^(AFHTTPRequestOperation *operation, id response)
     {
         _business_list = [[BusinessList alloc]initWithDict:response];
         [self.tableView reloadData];
