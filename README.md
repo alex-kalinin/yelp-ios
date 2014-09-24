@@ -1,8 +1,6 @@
 Yelp Client
 ========
 
-Codepath, http://courses.codepath.com/courses/intro_to_ios/week/2#!assignment
-
 ## Walkthrough
 
 ## Implemented Stories
@@ -13,3 +11,7 @@ Codepath, http://courses.codepath.com/courses/intro_to_ios/week/2#!assignment
   * Search bar should be in the navigation bar
 * Filter page
   * 
+
+## References
+
+Codepath, http://courses.codepath.com/courses/intro_to_ios/week/2#!assignment
