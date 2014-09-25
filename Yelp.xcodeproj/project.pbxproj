@@ -26,6 +26,8 @@
 		A121F56319D3960F00035ADC /* YelpCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = A121F56219D3960F00035ADC /* YelpCategory.m */; };
 		A121F56619D399BE00035ADC /* DistanceSection.m in Sources */ = {isa = PBXBuildFile; fileRef = A121F56519D399BE00035ADC /* DistanceSection.m */; };
 		A121F56919D39B7D00035ADC /* SortSection.m in Sources */ = {isa = PBXBuildFile; fileRef = A121F56819D39B7D00035ADC /* SortSection.m */; };
+		A121F56C19D3A50400035ADC /* CategorySection.m in Sources */ = {isa = PBXBuildFile; fileRef = A121F56B19D3A50400035ADC /* CategorySection.m */; };
+		A121F56F19D3ABAD00035ADC /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = A121F56E19D3ABAD00035ADC /* OrderedDictionary.m */; };
 		A1E4E47D19D235420007AC21 /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4E47C19D235420007AC21 /* Util.m */; };
 		A1E4E48219D236F90007AC21 /* YelpEntryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4E48019D236F90007AC21 /* YelpEntryCell.m */; };
 		A1E4E48319D236F90007AC21 /* YelpEntryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E4E48119D236F90007AC21 /* YelpEntryCell.xib */; };
@@ -79,6 +81,10 @@
 		A121F56519D399BE00035ADC /* DistanceSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceSection.m; sourceTree = "<group>"; };
 		A121F56719D39B7D00035ADC /* SortSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortSection.h; sourceTree = "<group>"; };
 		A121F56819D39B7D00035ADC /* SortSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortSection.m; sourceTree = "<group>"; };
+		A121F56A19D3A50400035ADC /* CategorySection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorySection.h; sourceTree = "<group>"; };
+		A121F56B19D3A50400035ADC /* CategorySection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorySection.m; sourceTree = "<group>"; };
+		A121F56D19D3ABAD00035ADC /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
+		A121F56E19D3ABAD00035ADC /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 		A1E4E47B19D235420007AC21 /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		A1E4E47C19D235420007AC21 /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		A1E4E47F19D236F90007AC21 /* YelpEntryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpEntryCell.h; sourceTree = "<group>"; };
@@ -184,6 +190,8 @@
 		42FD6C5018DC286B000BF2B9 /* Yelp */ = {
 			isa = PBXGroup;
 			children = (
+				A121F56D19D3ABAD00035ADC /* OrderedDictionary.h */,
+				A121F56E19D3ABAD00035ADC /* OrderedDictionary.m */,
 				A1E4E47E19D236CC0007AC21 /* Views */,
 				A1E4E47A19D234640007AC21 /* Model */,
 				420474F318DC297600E88E07 /* API */,
@@ -265,6 +273,8 @@
 				A121F56519D399BE00035ADC /* DistanceSection.m */,
 				A121F56719D39B7D00035ADC /* SortSection.h */,
 				A121F56819D39B7D00035ADC /* SortSection.m */,
+				A121F56A19D3A50400035ADC /* CategorySection.h */,
+				A121F56B19D3A50400035ADC /* CategorySection.m */,
 			);
 			name = FilterSections;
 			sourceTree = "<group>";
@@ -411,7 +421,9 @@
 				A1E4E48F19D24B6B0007AC21 /* ViewInterfaces.m in Sources */,
 				42FD6C5B18DC286B000BF2B9 /* AppDelegate.m in Sources */,
 				A1E4E48619D23E0C0007AC21 /* BusinessList.m in Sources */,
+				A121F56F19D3ABAD00035ADC /* OrderedDictionary.m in Sources */,
 				A1E4E4A019D37C980007AC21 /* DealsSection.m in Sources */,
+				A121F56C19D3A50400035ADC /* CategorySection.m in Sources */,
 				42FD6C5718DC286B000BF2B9 /* main.m in Sources */,
 				420474F618DC299500E88E07 /* YelpClient.m in Sources */,
 				A121F56619D399BE00035ADC /* DistanceSection.m in Sources */,

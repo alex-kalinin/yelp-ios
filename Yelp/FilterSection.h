@@ -18,4 +18,6 @@
 -(void) did_select_row:(NSIndexPath*)index_path
         withController:(UIViewController*)controller
          withTableView:(UITableView*)tableView;
+-(void) view_loaded;
+-(UIColor*) default_color;
 @end

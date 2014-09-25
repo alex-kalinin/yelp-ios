@@ -1,17 +1,13 @@
-//
-//  MainViewController.m
-//  Yelp
-//
-//  Created by Timothy Lee on 3/21/14.
-//  Copyright (c) 2014 codepath. All rights reserved.
-//
-
 #import "MainViewController.h"
 #import "YelpClient.h"
 #import "BusinessList.h"
 #import "BusinessEntry.h"
 #import "YelpEntryCell.h"
 #import "FilterSettingsController.h"
+#import "DealsSection.h"
+#import "DistanceSection.h"
+#import "SortSection.h"
+#import "CategorySection.h"
 
 NSString * const kYelpConsumerKey = @"vxKwwcR_NMQ7WaEiQBK_CA";
 NSString * const kYelpConsumerSecret = @"33QCvh5bIF5jIHR5klQr7RtBDhQ";
@@ -32,6 +28,9 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     UIBarButtonItem*    _filter_button;
     UISearchBar*        _search_bar;
     NSString*           _last_search_string;
+    
+    // Of FilterSection, etc.
+    NSArray*            _filter_sections;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -40,6 +39,15 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     if (self) {
         // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
         self.client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
+        
+        NSMutableArray* sections = [NSMutableArray new];
+        
+        [sections addObject:[DealsSection new]];
+        [sections addObject:[DistanceSection new]];
+        [sections addObject:[SortSection new]];
+        [sections addObject:[CategorySection new]];
+        
+        _filter_sections = sections;
     }
     return self;
 }
@@ -112,12 +120,13 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 {
     FilterSettingsController* fc = [FilterSettingsController new];
     fc.delegate = self;
+    fc.filter_sections = _filter_sections;
     UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:fc];
     [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     [self presentViewController:nav animated:YES completion:nil];
 }
 
--(void)filter_settings_done:(Filters *)filters
+-(void)filter_settings_done
 {
     
 }

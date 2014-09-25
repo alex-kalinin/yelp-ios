@@ -19,17 +19,10 @@
 @implementation FilterSettingsController
 {
     // Of FilterSection
-    NSArray*    _filter_sections;
+//    NSArray*    _filter_sections;
 }
 
 #define INIT_CATEGORIES_TO_SHOW 4
-
-static NSArray * _categoriesOptions;
-static NSDictionary * _categoriesDict;
-static NSArray * _sortByOptions;
-
-+ (void)initialize {
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +34,7 @@ static NSArray * _sortByOptions;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     // setup navigation bar
     self.title = @"Filters";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
@@ -53,25 +47,21 @@ static NSArray * _sortByOptions;
                                                                              action:@selector(searchButtonHandler:)];
     
     [self.tableView setBackgroundColor:[UIColor clearColor]];
-    [self.tableView setRowHeight:39];
+//    [self.tableView setRowHeight:39];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"FilterCell"];
     
-    NSMutableArray* sections = [NSMutableArray new];
-    [sections addObject:[DealsSection new]];
-    [sections addObject:[DistanceSection new]];
-    [sections addObject:[SortSection new]];
-    _filter_sections = sections;
+    for (FilterSection* sect in self.filter_sections) {
+        [sect view_loaded];
+    }
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"%i", (int)_filter_sections.count);
     return _filter_sections.count;
 }
-
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     FilterSection* s = _filter_sections[section];
@@ -120,7 +110,7 @@ static NSArray * _sortByOptions;
 }
 
 - (void)searchButtonHandler:(id)sender {
-    [self.delegate filter_settings_done:_filters];
+    [self.delegate filter_settings_done];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 @end

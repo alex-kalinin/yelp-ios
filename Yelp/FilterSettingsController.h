@@ -9,12 +9,12 @@
 
 @protocol FilterSettingsDelegate <NSObject>
 
-- (void)filter_settings_done:(Filters*)filters;
+- (void)filter_settings_done;
 
 @end
 
 
 @interface FilterSettingsController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, weak) id<FilterSettingsDelegate> delegate;
-@property (nonatomic, strong) Filters* filters;
+@property (nonatomic, strong) NSArray* filter_sections;
 @end
