@@ -1,6 +1,8 @@
 Yelp Client
 ========
 
+Time spent: 8 hours.
+
 ## Walkthrough
 ![Video Walkthrough](yelp-screen-cap.gif)
 
