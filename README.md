@@ -2,6 +2,9 @@ Yelp Client
 ========
 
 #### Walkthrough
+![Video Walkthrough](yelp-screen-cap.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 #### Implemented Stories
 ##### Required - all
