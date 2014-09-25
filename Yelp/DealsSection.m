@@ -48,4 +48,9 @@
     _deals_on = _deals_switch.on;
 }
 
+-(void) fill_params:(NSMutableDictionary*)params
+{
+    if (_deals_on) [params setObject:@"1" forKey:@"deals_filter"];
+}
+
 @end

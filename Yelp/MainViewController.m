@@ -113,7 +113,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     self.navigationItem.titleView = _search_bar;
     self.navigationItem.leftBarButtonItem = _filter_button;
     
-    [self loadData];
+    [self load_data];
 }
 
 -(void) filter_click
@@ -128,19 +128,14 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 
 -(void)filter_settings_done
 {
-    
+    [self load_data];
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     _last_search_string = _search_bar.text;
     [_search_bar resignFirstResponder];
-    [self loadData];
-}
-
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    
+    [self load_data];
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,9 +149,18 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
--(void) loadData
+-(void) load_data
 {
-    [self.client searchWithTerm:_last_search_string success:^(AFHTTPRequestOperation *operation, id response)
+    NSMutableDictionary* params = [NSMutableDictionary new];
+    [params setObject:@"Sunnyvale" forKey:@"location"];
+    [params setObject:_last_search_string forKey:@"term"];
+    
+    for (FilterSection* sect in _filter_sections)
+    {
+        [sect fill_params:params];
+    }
+
+    [self.client searchWithParams:params success:^(AFHTTPRequestOperation *operation, id response)
     {
         _business_list = [[BusinessList alloc]initWithDict:response];
         [self.tableView reloadData];

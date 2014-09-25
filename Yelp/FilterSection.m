@@ -42,7 +42,10 @@
 
 -(void) view_loaded
 {
-    
+}
+
+-(void) fill_params:(NSMutableDictionary*)params
+{
 }
 
 @end

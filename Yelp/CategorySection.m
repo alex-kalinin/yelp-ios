@@ -25,17 +25,17 @@
                        @"Nightlife", @"Pets", @"Restaurants", @"Shopping"];
     
     
-    _all_cat_ids = @[@"active, All", @"arts, All", @"auto, All", @"bicycles, [DK]",
-                     @"education, All", @"food, All", @"homeservices, All", @"hotelstravel, All",
-                     @"nightlife, All", @"pets, All", @"restaurants, All", @"shopping, All"];
+    _all_cat_ids = @[@"active", @"arts", @"auto", @"bicycles",
+                     @"education", @"food,", @"homeservices", @"hotelstravel",
+                     @"nightlife", @"pets", @"restaurants", @"shopping,"];
     
     _displayed_cat_indexes = [OrderedDictionary new];
     [self add_selected_index:1];
-    [self add_selected_index:3];
-    [self add_selected_index:6];
+    [self add_selected_index:5];
+    [self add_selected_index:8];
 
     _selected_cats = [NSMutableDictionary new];
-    [_selected_cats setObject:@(3) forKey:@(3)];
+//    [_selected_cats setObject:@(3) forKey:@(3)];
     
     _expanded = NO;
     return [super init];
@@ -110,4 +110,20 @@
     [tableView reloadSections:[NSIndexSet indexSetWithIndex:index_path.section]
              withRowAnimation:UITableViewRowAnimationFade];
 }
+
+-(void) fill_params:(NSMutableDictionary*)params
+{
+    NSArray* keys = [_selected_cats allKeys];
+    NSMutableString* cats = [NSMutableString new];
+    
+    for (NSNumber* key in keys) {
+        int index = (int) [key integerValue];
+        NSString* cat_name = _all_cat_ids[index];
+        if (cats.length > 0) [cats appendString:@","];
+        [cats appendString:cat_name];
+    }
+    
+    [params setObject:cats forKey:@"category_filter"];
+}
+
 @end

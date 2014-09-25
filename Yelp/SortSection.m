@@ -29,4 +29,10 @@
     return @"Sort";
 }
 
+-(void) fill_params:(NSMutableDictionary*)params
+{
+    [params setObject:[NSString stringWithFormat:@"%i", self.selected_index]
+               forKey:@"sort"];
+}
+
 @end

@@ -20,4 +20,5 @@
          withTableView:(UITableView*)tableView;
 -(void) view_loaded;
 -(UIColor*) default_color;
+-(void) fill_params:(NSMutableDictionary*)params;
 @end

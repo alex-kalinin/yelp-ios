@@ -15,7 +15,7 @@
 
 -(id) init
 {
-    self.distances = @[@"1000", @"5000", @"10000", @"50000"];
+    self.distances = @[@"1000", @"5000", @"10000", @"40000"];
     self.expanded = FALSE;
     self.selected_index = 1;
     return [super init];
@@ -49,5 +49,11 @@
         [tableView reloadSections:[NSIndexSet indexSetWithIndex:index_path.section]
                  withRowAnimation:UITableViewRowAnimationFade];
 }
+
+-(void) fill_params:(NSMutableDictionary*)params
+{
+    [params setObject:self.distances[self.selected_index] forKey:@"radius_filter"];
+}
+
 
 @end
