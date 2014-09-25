@@ -28,7 +28,7 @@
     
     _businesses = bizList;
     
-    NSLog(@"%@", businesses);
+//    NSLog(@"%@", businesses);
     
     return self;
 }

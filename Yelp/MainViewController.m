@@ -11,6 +11,7 @@
 #import "BusinessList.h"
 #import "BusinessEntry.h"
 #import "YelpEntryCell.h"
+#import "FilterSettingsController.h"
 
 NSString * const kYelpConsumerKey = @"vxKwwcR_NMQ7WaEiQBK_CA";
 NSString * const kYelpConsumerSecret = @"33QCvh5bIF5jIHR5klQr7RtBDhQ";
@@ -109,6 +110,16 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 
 -(void) filter_click
 {
+    FilterSettingsController* fc = [FilterSettingsController new];
+    fc.delegate = self;
+    UINavigationController* nav = [[UINavigationController alloc]initWithRootViewController:fc];
+    [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+-(void)filter_settings_done:(Filters *)filters
+{
+    
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
