@@ -1,13 +1,13 @@
 Yelp Client
 ========
 
-#### Walkthrough
+## Walkthrough
 ![Video Walkthrough](yelp-screen-cap.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-#### Implemented Stories
-##### Required - all
+## Implemented Stories
+#### Required - all
 * Search results page
   * Table rows should be dynamic height according to the content height
   * Custom cells should have the proper Auto Layout constraints
@@ -20,8 +20,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
   * Categories should show a subset of the full list with a "See All" row to expand.
   * Clicking on the "Search" button should dismiss the filters page and trigger the search w/ the new filter settings.
 
-##### Optional
+#### Optional
 
-#### References
+## References
 
 Codepath, http://courses.codepath.com/courses/intro_to_ios/week/2#!assignment
