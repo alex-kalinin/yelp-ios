@@ -27,7 +27,6 @@
     NSLog(@"%@", params);
     
     // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
-//    NSDictionary *parameters = @{@"term": term, @"location" : @"Sunnyvale"};
     return [self GET:@"search" parameters:params success:success failure:failure];
 }
 

@@ -35,7 +35,6 @@
     [self add_selected_index:8];
 
     _selected_cats = [NSMutableDictionary new];
-//    [_selected_cats setObject:@(3) forKey:@(3)];
     
     _expanded = NO;
     return [super init];

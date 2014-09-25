@@ -5,7 +5,7 @@
 //  Created by Alex Kalinin on 9/23/14.
 
 #import <UIKit/UIKit.h>
-#import "Filters.h"
+
 
 @protocol FilterSettingsDelegate <NSObject>
 

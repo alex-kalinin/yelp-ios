@@ -36,7 +36,6 @@
 		A1E4E48F19D24B6B0007AC21 /* ViewInterfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4E48E19D24B6B0007AC21 /* ViewInterfaces.m */; };
 		A1E4E49319D267F20007AC21 /* FilterSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4E49119D267F20007AC21 /* FilterSettingsController.m */; };
 		A1E4E49419D267F20007AC21 /* FilterSettingsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1E4E49219D267F20007AC21 /* FilterSettingsController.xib */; };
-		A1E4E49719D26BC60007AC21 /* Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4E49619D26BC60007AC21 /* Filters.m */; };
 		A1E4E4A019D37C980007AC21 /* DealsSection.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4E49F19D37C980007AC21 /* DealsSection.m */; };
 		A1E4E4A419D37CBF0007AC21 /* FilterSection.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E4E4A319D37CBF0007AC21 /* FilterSection.m */; };
 /* End PBXBuildFile section */
@@ -99,8 +98,6 @@
 		A1E4E49019D267F20007AC21 /* FilterSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterSettingsController.h; sourceTree = "<group>"; };
 		A1E4E49119D267F20007AC21 /* FilterSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterSettingsController.m; sourceTree = "<group>"; };
 		A1E4E49219D267F20007AC21 /* FilterSettingsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterSettingsController.xib; sourceTree = "<group>"; };
-		A1E4E49519D26BC60007AC21 /* Filters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filters.h; sourceTree = "<group>"; };
-		A1E4E49619D26BC60007AC21 /* Filters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Filters.m; sourceTree = "<group>"; };
 		A1E4E49E19D37C980007AC21 /* DealsSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsSection.h; sourceTree = "<group>"; };
 		A1E4E49F19D37C980007AC21 /* DealsSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsSection.m; sourceTree = "<group>"; };
 		A1E4E4A219D37CBF0007AC21 /* FilterSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterSection.h; sourceTree = "<group>"; };
@@ -246,8 +243,6 @@
 				A1E4E48819D23F450007AC21 /* BusinessEntry.m */,
 				A1E4E48D19D24B6B0007AC21 /* ViewInterfaces.h */,
 				A1E4E48E19D24B6B0007AC21 /* ViewInterfaces.m */,
-				A1E4E49519D26BC60007AC21 /* Filters.h */,
-				A1E4E49619D26BC60007AC21 /* Filters.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -413,7 +408,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1E4E48919D23F450007AC21 /* BusinessEntry.m in Sources */,
-				A1E4E49719D26BC60007AC21 /* Filters.m in Sources */,
 				A1E4E48219D236F90007AC21 /* YelpEntryCell.m in Sources */,
 				A1E4E4A419D37CBF0007AC21 /* FilterSection.m in Sources */,
 				A1E4E47D19D235420007AC21 /* Util.m in Sources */,

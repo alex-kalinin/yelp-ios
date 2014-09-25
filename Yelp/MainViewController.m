@@ -98,8 +98,6 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     [self.tableView registerNib:[UINib nibWithNibName:@"YelpEntryCell" bundle:nil] forCellReuseIdentifier:@"YelpEntryCell"];
     
     _size_cell = [YelpEntryCell new];
-    //[self.tableView dequeueReusableCellWithIdentifier:@"YelpEntryCell"];
-    
     _filter_button = [[UIBarButtonItem alloc] initWithTitle:@"Filter"
                                                      style:UIBarButtonItemStylePlain
                                                     target:self
@@ -141,7 +139,6 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

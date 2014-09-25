@@ -18,8 +18,6 @@
 
 @implementation FilterSettingsController
 {
-    // Of FilterSection
-//    NSArray*    _filter_sections;
 }
 
 #define INIT_CATEGORIES_TO_SHOW 4
@@ -35,7 +33,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // setup navigation bar
     self.title = @"Filters";
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self
@@ -47,7 +44,6 @@
                                                                              action:@selector(searchButtonHandler:)];
     
     [self.tableView setBackgroundColor:[UIColor clearColor]];
-//    [self.tableView setRowHeight:39];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"FilterCell"];
@@ -87,8 +83,6 @@
     FilterSection* s = _filter_sections[indexPath.section];
     return [s cell_for_index_path:indexPath withTableView:tableView];
 }
-
-// helper
 
 #pragma mark - UITableViewDelegate
 

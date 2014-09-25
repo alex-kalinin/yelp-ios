@@ -27,9 +27,7 @@
     }
     
     _businesses = bizList;
-    
-//    NSLog(@"%@", businesses);
-    
+
     return self;
 }
 
@@ -40,7 +38,6 @@
 
 -(BusinessEntry*) biz_for_index_path:(NSIndexPath*)indexPath
 {
-//    int index = (int) indexPath.section * (int) indexPath.row;
     return _businesses[indexPath.row];
 }
 
