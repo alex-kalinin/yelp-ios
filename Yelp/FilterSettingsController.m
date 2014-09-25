@@ -13,14 +13,9 @@
 
 @interface FilterSettingsController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
 @end
 
 @implementation FilterSettingsController
-{
-}
-
-#define INIT_CATEGORIES_TO_SHOW 4
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
