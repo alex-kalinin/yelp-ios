@@ -26,8 +26,8 @@
     
     
     _all_cat_ids = @[@"active", @"arts", @"auto", @"bicycles",
-                     @"education", @"food,", @"homeservices", @"hotelstravel",
-                     @"nightlife", @"pets", @"restaurants", @"shopping,"];
+                     @"education", @"food", @"homeservices", @"hotelstravel",
+                     @"nightlife", @"pets", @"restaurants", @"shopping"];
     
     _displayed_cat_indexes = [OrderedDictionary new];
     [self add_selected_index:1];

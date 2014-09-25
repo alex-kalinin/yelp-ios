@@ -37,6 +37,11 @@
     UITableViewCell * cell = [self create_cell:table_view];
     NSString* dist = self.distances[self.expanded ? index_path.row : self.selected_index];
     cell.textLabel.text = dist;
+    
+    if (!_expanded) {
+        cell.accessoryView =  [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Arrow"]];
+    }
+    
     return cell;
 }
 
