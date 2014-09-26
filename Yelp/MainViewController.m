@@ -52,21 +52,21 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     return self;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    return 94;
-//}
-//
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    BusinessEntry* biz = [_business_list biz_for_index_path:indexPath];
-//    [biz display:_size_cell];
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 94;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BusinessEntry* biz = [_business_list biz_for_index_path:indexPath];
+    [biz display:_size_cell];
 //    [_size_cell layoutSubviews];
-//    CGSize size = [_size_cell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
-//    NSLog(@"%i", (int)size.height);
-//    return size.height + 1;
-//}
-//
+    CGSize size = [_size_cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    NSLog(@"%i", (int)size.height);
+    return size.height + 1;
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -96,7 +96,8 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     
     [self.tableView registerNib:[UINib nibWithNibName:@"YelpEntryCell" bundle:nil] forCellReuseIdentifier:@"YelpEntryCell"];
     
-    _size_cell = [YelpEntryCell new];
+    _size_cell = [self.tableView dequeueReusableCellWithIdentifier:@"YelpEntryCell"];
+    
     _filter_button = [[UIBarButtonItem alloc] initWithTitle:@"Filter"
                                                      style:UIBarButtonItemStylePlain
                                                     target:self

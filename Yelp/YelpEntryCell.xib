@@ -21,7 +21,7 @@
                             <constraint firstAttribute="width" constant="72" id="g0v-RP-h7K"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezs-X5-l0M">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="225" translatesAutoresizingMaskIntoConstraints="NO" id="ezs-X5-l0M">
                         <rect key="frame" x="88" y="7" width="225" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -43,14 +43,14 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmH-LY-zkJ">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="225" translatesAutoresizingMaskIntoConstraints="NO" id="hmH-LY-zkJ">
                         <rect key="frame" x="88" y="45" width="225" height="15"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.10000000000000001" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yB-oA-c2Q">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="225" translatesAutoresizingMaskIntoConstraints="NO" id="2yB-oA-c2Q">
                         <rect key="frame" x="88" y="62" width="225" height="15"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -59,6 +59,7 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="centerY" secondItem="pFY-Ke-sdG" secondAttribute="centerY" id="3hd-xk-qbb"/>
                     <constraint firstItem="hmH-LY-zkJ" firstAttribute="leading" secondItem="pFY-Ke-sdG" secondAttribute="trailing" constant="8" id="5qj-id-00m"/>
                     <constraint firstAttribute="trailing" secondItem="Gfp-63-1Q8" secondAttribute="trailing" constant="7" id="6gD-yf-pUR"/>
                     <constraint firstItem="hmH-LY-zkJ" firstAttribute="top" secondItem="ezs-X5-l0M" secondAttribute="bottom" constant="20" id="75s-Lm-aZ2"/>
@@ -67,7 +68,6 @@
                     <constraint firstItem="Gfp-63-1Q8" firstAttribute="leading" secondItem="uIz-Kg-lmc" secondAttribute="trailing" constant="8" id="ARR-Nu-2OZ"/>
                     <constraint firstItem="ezs-X5-l0M" firstAttribute="leading" secondItem="pFY-Ke-sdG" secondAttribute="trailing" constant="8" id="D9Q-Nx-CTU"/>
                     <constraint firstItem="Gfp-63-1Q8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="26" id="Ht4-cP-lia"/>
-                    <constraint firstItem="pFY-Ke-sdG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="L5M-ho-ZOi"/>
                     <constraint firstItem="hmH-LY-zkJ" firstAttribute="leading" secondItem="pFY-Ke-sdG" secondAttribute="trailing" constant="8" id="QGc-7o-WVy"/>
                     <constraint firstAttribute="trailing" secondItem="ezs-X5-l0M" secondAttribute="trailing" constant="7" id="TkH-om-Jbz"/>
                     <constraint firstAttribute="trailing" secondItem="hmH-LY-zkJ" secondAttribute="trailing" constant="7" id="Y6U-N0-iiY"/>
@@ -76,6 +76,7 @@
                     <constraint firstItem="uIz-Kg-lmc" firstAttribute="leading" secondItem="pFY-Ke-sdG" secondAttribute="trailing" constant="8" id="n6z-1B-CK3"/>
                     <constraint firstAttribute="trailing" secondItem="2yB-oA-c2Q" secondAttribute="trailing" constant="7" id="pyD-HZ-gXo"/>
                     <constraint firstItem="2yB-oA-c2Q" firstAttribute="leading" secondItem="pFY-Ke-sdG" secondAttribute="trailing" constant="8" id="qgB-31-wEe"/>
+                    <constraint firstAttribute="bottom" secondItem="2yB-oA-c2Q" secondAttribute="bottom" constant="6" id="tmF-Ic-iBU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
